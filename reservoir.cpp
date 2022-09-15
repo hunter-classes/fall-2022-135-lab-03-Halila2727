@@ -27,14 +27,14 @@ double get_east_storage(std::string date)
 	std::string junk;        // new string variable
 	getline(fin, junk); // read one line from the file
 
-	while(fin >> date >> AUGEVolume) { 
+	while(fin >> Point_time >> AUGEVolume) { 
 	// this loop reads the file line-by-line
 	// extracting 5 values on each iteration
 
 		fin.ignore(INT_MAX, '\n'); //skips to the end of line,
 				//ignorring the remaining columns
 
-		if(Point_time == date) {
+		if(date == Point_time) {
 			return AUGEVolume;
 		}
 	}
