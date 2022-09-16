@@ -22,7 +22,10 @@ int main()
 
 	std::cout << "\n\n";
 	std::cout << "East basin storage: " << get_east_storage(date) << " billion gallons";
-	std::cout << std::endl;
+	std::cout << "\n\n";
 	
+	std::cout << "minimum storage in the East basin: " << get_min_east() << " billion gallons\n";
+	std::cout << "MAXIMUM storage in the East basin: " << get_max_east() << " billion gallons\n\n";
+
 	return 0;
 }
