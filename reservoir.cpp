@@ -2,9 +2,9 @@
         Author: Halil Akca
         Course: CSCI-135
         Instructor: Mike Zamansky
-        Assignment: Lab 03, Task A
+        Assignment: Lab 03, Task A & B
 
-        This program will take in an input date and output the east basin storage for that date.
+        This program will take in an input date and output the east storage for that date and also return min and max storage.
 */
 
 #include <iostream>
@@ -40,4 +40,58 @@ double get_east_storage(std::string date)
 	}
 	fin.close();
 	return 0;
+}
+
+double get_min_east()
+{
+	std::ifstream fin("Current_Reservoir_Levels.tsv");
+	if (fin.fail()) {
+		std::cerr << "File cannot be opened for reading." << std::endl;
+		exit(1);
+	}
+
+        std::string junk;
+        getline(fin, junk);
+
+	std::string Point_time;
+        double AUGEVolume;
+	double min = 10000000;
+
+	while (fin >> Point_time >> AUGEVolume) {
+		fin.ignore(INT_MAX, '\n');
+
+		if(min >= AUGEVolume) {
+			min = AUGEVolume;
+		}
+	}
+	fin.close();
+	
+	return min;
+}
+
+double get_max_east()
+{
+        std::ifstream fin("Current_Reservoir_Levels.tsv");
+        if (fin.fail()) {
+                std::cerr << "File cannot be opened for reading." << std::endl;
+                exit(1);
+        }
+
+        std::string junk;
+        getline(fin, junk);
+
+        std::string Point_time;
+        double AUGEVolume;
+        double max = -10000000;
+
+        while (fin >> Point_time >> AUGEVolume) {
+                fin.ignore(INT_MAX, '\n');
+
+                if(max <= AUGEVolume) {
+                        max = AUGEVolume;
+                }
+        }
+        fin.close();
+
+        return max;
 }
