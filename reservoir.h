@@ -2,7 +2,7 @@
         Author: Halil Akca
         Course: CSCI-135
         Instructor: Mike Zamansky
-        Assignment: Lab 03, Task A
+        Assignment: Lab 03, Task A through C
         This file serves as a means to let one file use the contents of another file.
 */
 #include <iostream>
