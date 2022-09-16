@@ -2,9 +2,9 @@
         Author: Halil Akca
         Course: CSCI-135
         Instructor: Mike Zamansky
-        Assignment: Lab 03, Task A & B
+        Assignment: Lab 03, Task A through C
 
-        This program will take in an input date and output the east storage for that date and also return min and max storage.
+        This program has a function which take in an input date and output the east storage for that date and another function which returns min and max storage. One final function returns whether the east basin or west basin elevation is higher for a given date.
 */
 
 #include <iostream>
