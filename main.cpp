@@ -2,9 +2,9 @@
         Author: Halil Akca
         Course: CSCI-135
         Instructor: Mike Zamansky
-        Assignment: Lab 02, Task A
+        Assignment: Lab 03, Task A through D
 
-        This program will call the function made in reservoir.cpp.
+        This program will call the functions made in reservoir.cpp and reverseorder.cpp.
 */
 
 #include <iostream>
@@ -13,6 +13,7 @@
 #include <climits>
 #include <cstring>
 #include "reservoir.h"
+#include "reverseorder.h"
 
 int main()
 {
@@ -30,5 +31,9 @@ int main()
 	date = "09/13/2018";
 
 	std::cout << "Which basin is higher on the following date? " << date << "\n" << compare_basins(date) << "\n\n";
+
+	std::cout << "Earlier date: 05/29/2018\nLater date: 06/02/2018\n";
+	reverse_order("05/29/2018", "06/02/2018");
+	std::cout << "\n\n";
 	return 0;
 }
