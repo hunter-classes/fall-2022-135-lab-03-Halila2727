@@ -27,5 +27,8 @@ int main()
 	std::cout << "minimum storage in the East basin: " << get_min_east() << " billion gallons\n";
 	std::cout << "MAXIMUM storage in the East basin: " << get_max_east() << " billion gallons\n\n";
 
+	date = "09/13/2018";
+
+	std::cout << "Which basin is higher on the following date? " << date << "\n" << compare_basins(date) << "\n\n";
 	return 0;
 }
