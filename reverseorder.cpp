@@ -30,7 +30,7 @@ void reverse_order(std::string date1, std::string date2)
 	double westElevation;
 
 	std::string dates[365];
-	int westElevations[365];
+	double westElevations[365];
 	int i = 0;
 
 	int dateNum1;
@@ -55,6 +55,6 @@ void reverse_order(std::string date1, std::string date2)
 
 	for(int j=dateNum2; j >= dateNum1; j--)
 	{
-		std::cout << "\n" << dates[j] << "  " << westElevations[j];
+		std::cout << "\n" << dates[j] << "  " << westElevations[j] << " feet";
 	}
 }
