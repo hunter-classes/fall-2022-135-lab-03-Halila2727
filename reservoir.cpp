@@ -95,3 +95,42 @@ double get_max_east()
 
         return max;
 }
+
+std::string compare_basins(std::string date)
+{
+	std::ifstream fin("Current_Reservoir_Levels.tsv");
+	if (fin.fail()) {
+		std::cerr << "File cannot be opened for reading." << std::endl;
+		exit(1);
+	}
+
+	std::string junk;
+	getline(fin, junk);
+
+	std::string Point_time;
+	double AUGEVolume;
+	double eastElevation;
+	double AUGWVolume;
+	double westElevation;
+
+	while (fin >> Point_time >> AUGEVolume >> eastElevation >> AUGWVolume >> westElevation)
+	{
+		fin.ignore(INT_MAX, '\n');
+
+		if(date == Point_time) {
+			if(eastElevation > westElevation) {
+				return "East";
+			}
+			
+			else if(westElevation > eastElevation) {
+				return "West";
+			}
+
+			else {
+				return "Equal";
+			}
+		}
+	}
+
+	return "";
+}
